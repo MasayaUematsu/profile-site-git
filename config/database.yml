@@ -1,0 +1,22 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password:
+  host: localhost
+
+
+development:
+  <<: *default
+  database: profile-site_development
+
+test:
+  <<: *default
+  database: profile-site_test
+
+production:
+  <<: *default
+  database: profile-site_production
+  username: profile-site_app
+  password: <%= ENV['SAMPLE_DATABASE_PASSWORD'] %>

@@ -1,0 +1,11 @@
+development:
+  adapter: async
+
+test:
+  adapter: async
+
+production:
+  secret_key_base: 7efad3e0ef94bfd20382c721920f9b034ef11adfab043809e8c185c6c3deda66574115e061f299a09b2554cc93e2ebd407c1351453a1d8637be3428b508477e5
+  adapter: redis
+  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  channel_prefix: profile-site_production
